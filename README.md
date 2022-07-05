@@ -1,1 +1,1 @@
-My first software project
+My first C# project
