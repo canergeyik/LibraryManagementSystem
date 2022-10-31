@@ -19,8 +19,8 @@ namespace LibraryManagementSystem
         {
             List<string> keys = new List<string>() { "@username" };
             List<string> parameters = new List<string>() { "%" + main.AdminUserSearch.Text.ToString() + "%" };
-            string srQuery = "select username,email,userRank from [Users] where username like ";
-            DataTable dt = db_Parameterized_Select_DataTable(srQuery + " @username", keys, parameters);
+            string srQuery = "select username,email,userRank from [Users] where username like @username ";
+            DataTable dt = db_Parameterized_Select_DataTable(srQuery, keys, parameters);
             RefreshDataGrid(dt, main.AdminUsersDataGrid);
         }
     }
